@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+
+    <title>Customer Bank Details</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Enter Following Details</h2>
+        <form name="CustomerDetails" action="#" th:action="@{/validate-ifsc}" th:object="${customer}" method="post">
+            <div class="mb-3">
+                <label for="customerName" class="form-label">Name: </label>
+                <input type="text" class="form-control" id="customerName" th:field="*{name}" >
+            </div>
+            <div class="mb-3">
+                <label for="accountNumber" class="form-label">Bank Account Number: </label>
+                <input type="text" class="form-control" id="accountNumber" required th:field="*{accountNumber}">
+            </div>
+            <div class="mb-3">
+                <label for="accountNumber" class="form-label">Re-enter Bank Account Number: </label>
+                <input type="text" class="form-control" id="reenterAccountNumber" required th:field="*{accountNumber}">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="ifsc" class="form-label">IFSC Code: </label>
+                <input type="text" class="form-control" id="ifsc" required th:field="*{ifscCode}">
+            </div>
+            <button type="submit" class="btn btn-primary" id="okay">Submit</button>
+        </form>
+        <script type="text/javascript" language="JavaScript">
+            document.getElementById("okay").onclick = function() {
+                    var first = document.getElementById("accountNumber").value;
+                    var second = document.getElementById("reenterAccountNumber").value;
+                    if(first != second) {
+                        alert("Account numbers you entered are does not match.");
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+                }
+
+        </script>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

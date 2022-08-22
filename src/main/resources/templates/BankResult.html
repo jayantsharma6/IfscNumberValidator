@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+
+    <title>IFSC Results</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <h2>Bank Details from IFSC Code</h2>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Bank: </b> <p th:text="${bankDetails.bank}"></p></li>
+            <li class="list-group-item"><b>Branch: </b> <p th:text="${bankDetails.branch}"></p></li>
+            <li class="list-group-item"><b>IFSC: </b> <p th:text="${bankDetails.ifsc}"></p></li>
+            <li class="list-group-item"><b>Bank Code: </b> <p th:text="${bankDetails.bankCode}"></p></li>
+            <li class="list-group-item"><b>Address: </b> <p th:text="${bankDetails.address}"></p></li>
+            <li class="list-group-item"><b>Centre: </b> <p th:text="${bankDetails.centre}"></p></li>
+            <li class="list-group-item"><b>District: </b> <p th:text="${bankDetails.district}"></p></li>
+            <li class="list-group-item"><b>State: </b> <p th:text="${bankDetails.state}"></p></li>
+            <li class="list-group-item"><b>City: </b> <p th:text="${bankDetails.city}"></p></li>
+            <li class="list-group-item"><b>Contact: </b> <p th:text="${bankDetails.contact}"></p></li>
+            <li class="list-group-item"><b>MICR: </b> <p th:text="${bankDetails.micr}"></p></li>
+            <li class="list-group-item"><b>IMPS: </b> <p th:text="${bankDetails.imps}"></p></li>
+            <li class="list-group-item"><b>UPI: </b> <p th:text="${bankDetails.upi}"></p></li>
+            <li class="list-group-item"><b>RTGS: </b> <p th:text="${bankDetails.rtgs}"></p></li>
+            <li class="list-group-item"><b>NEFT: </b> <p th:text="${bankDetails.neft}"></p></li>
+            <li class="list-group-item"><b>SWIFT: </b> <p th:text="${bankDetails.swift}"></p></li>
+            <li class="list-group-item"><b>ISO3166: </b> <p th:text="${bankDetails.iso3166}"></p></li>
+
+        </ul>
+        <div class="buttons mt-3">
+            <form action="#" th:action="@{/customer}" method="get">
+                <button type="submit" class="btn btn-warning">Something is not right, Reset</button>
+            </form>
+        </div>
+        <div class="buttons mt-3">
+            <form action="#" th:action="@{/thankyou}" method="get">
+                <button type="submit" class="btn btn-success">Looks Fine, Okay</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body>
+</html>
