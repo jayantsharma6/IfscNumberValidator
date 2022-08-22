@@ -5,8 +5,8 @@ The application takes account number and IFSC code as input from user and uses R
 Java, Sring Boot, HTML
 
 ### Where to find Code?
-Controllers and Beans :- src > main > java > com.example.IfscNumberValidator
-Front-ent / HTML forms :- src > main > resources > templates
+* Controllers and Beans :- src > main > java > com.example.IfscNumberValidator
+- Front-ent / HTML forms :- src > main > resources > templates
 
 ### Flow
 0. Starts from hitting API "/customer" :- api sends the "customer.html" view. This is an html form that takes input from user.
